@@ -1,0 +1,121 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30FCD9B0-3BFB-41D1-88D9-686974CB09B7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slush</RootNamespace>
+    <AssemblyName>Slush</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Slush.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Slush.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Crc16.cs" />
+    <Compile Include="DomainObjects.Mp3\LameHeader.cs" />
+    <Compile Include="DomainObjects.Mp3\LameHeaderRules.cs" />
+    <Compile Include="DomainObjects.Mp3\Mp3StreamReader.cs" />
+    <Compile Include="Mp3Validator.cs" />
+    <Compile Include="Services.Mp3\LameHeaderService.cs" />
+    <Compile Include="Validators.Mp3\AverageBitrateValidator.cs" />
+    <Compile Include="Validators.Mp3\FrameCrcValidator.cs" />
+    <Compile Include="Validators.Mp3\JunkDataValidator.cs" />
+    <Compile Include="Validators.Mp3\LameHeaderPresentValidator.cs" />
+    <Compile Include="Validators.Mp3\LameInfoCrcValidator.cs" />
+    <Compile Include="Validators.Mp3\LameMusicCrcValidator.cs" />
+    <Compile Include="Validators\ValidationFailureCollectorService.cs" />
+    <Compile Include="UnexpectedException.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="DomainObjects.Mp3\IMp3StreamRegion.cs" />
+    <Compile Include="DomainObjects.Mp3\JunkRegion.cs" />
+    <Compile Include="DomainObjects.Mp3\Mp3FrameHeader.cs" />
+    <Compile Include="DomainObjects.Mp3\Mp3FrameHeaderRules.cs" />
+    <Compile Include="Services.Mp3\Mp3CrawlerService.cs" />
+    <Compile Include="App\Slush.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EventWeaver.cs" />
+    <Compile Include="DomainObjects.Mp3\Mp3Frame.cs" />
+    <Compile Include="Services\StreamProcessService.cs" />
+    <Compile Include="ValidationFailure.cs" />
+    <Compile Include="Validators.Mp3\BrokenFrameValidator.cs" />
+    <Compile Include="IValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TODO.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

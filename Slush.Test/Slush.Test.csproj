@@ -1,0 +1,125 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1CDE1063-E057-4AE0-9FA6-9CB5DA2EE3BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slush</RootNamespace>
+    <AssemblyName>Slush.Test</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="nunit.framework.extensions, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Crc16Test.cs" />
+    <Compile Include="DomainObjects.Mp3.Test\JunkRegionTest.cs" />
+    <Compile Include="DomainObjects.Mp3.Test\LameHeaderRulesTest.cs" />
+    <Compile Include="DomainObjects.Mp3.Test\LameHeaderTest.cs" />
+    <Compile Include="DomainObjects.Mp3.Test\Mp3FrameHeaderRulesTest.cs" />
+    <Compile Include="DomainObjects.Mp3.Test\Mp3FrameHeaderTest.cs" />
+    <Compile Include="DomainObjects.Mp3.Test\Mp3FrameTest.cs" />
+    <Compile Include="DomainObjects.Mp3.Test\Mp3StreamBuilder.cs" />
+    <Compile Include="DomainObjects.Mp3.Test\Mp3StreamReaderTest.cs" />
+    <Compile Include="DomainObjects.Mp3.Test\Mp3StreamReaderTest.File.cs" />
+    <Compile Include="EventWeaverTest.cs" />
+    <Compile Include="Mp3ValidatorTest.cs" />
+    <Compile Include="PrereqAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services.Mp3.Test\LameHeaderServiceTest.cs" />
+    <Compile Include="Services.Mp3.Test\Mp3CrawlerServiceTest.cs" />
+    <Compile Include="Services.Test\StreamProcessServiceTest.cs" />
+    <Compile Include="UtilTest.cs" />
+    <Compile Include="ValidationFailureTest.cs" />
+    <Compile Include="Validators.Mp3.Test\AverageBitrateValidatorTest.cs" />
+    <Compile Include="Validators.Mp3.Test\BrokenFrameValidatorTest.cs" />
+    <Compile Include="Validators.Mp3.Test\FrameCrcValidatorTest.cs" />
+    <Compile Include="Validators.Mp3.Test\JunkDataValidatorTest.cs" />
+    <Compile Include="Validators.Mp3.Test\LameHeaderPresentValidatorTest.cs" />
+    <Compile Include="Validators.Mp3.Test\LameInfoCrcValidatorTest.cs" />
+    <Compile Include="Validators.Mp3.Test\LameMusicCrcValidatorTest.cs" />
+    <Compile Include="Validators.Test\ValidationFailureCollectorServiceTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Slush\Slush.csproj">
+      <Project>{30FCD9B0-3BFB-41D1-88D9-686974CB09B7}</Project>
+      <Name>Slush</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

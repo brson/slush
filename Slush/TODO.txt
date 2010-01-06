@@ -1,0 +1,4 @@
+﻿Mp3StreamReader needs to implement the reading itself to avoid having to peek bytes
+Mp3StreamReader
+Mp3CrawlerService
+Rename Mp3->Mpeg
